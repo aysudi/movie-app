@@ -1,6 +1,18 @@
 import { MovieManager } from "./class.js";
 import { renderMoviesList, searchMovies, sortMovies } from "./helper.js";
 import { movies } from "./movies.js";
+import { defineConfig } from "vite";
+
+export default defineConfig({
+  root: ".",
+  build: {
+    outDir: "dist",
+  },
+  server: {
+    port: 3000,
+    open: true,
+  },
+});
 
 const API_URL = "https://67a0cfbf5bcfff4fabe0b8dc.mockapi.io/api/movies";
 
