@@ -18,7 +18,7 @@ export class MovieManager {
     }
   }
 
-  deleteElement(url, id, e) {
+  deleteElement(url, id, el) {
     fetch(`${url}/${id}`, {
       method: "DELETE",
     })
@@ -29,19 +29,8 @@ export class MovieManager {
         return response.json();
       })
       .then(() => {
-        e.target.parentElement.parentElement.parentElement.remove();
+        el.parentElement.parentElement.parentElement.remove();
       })
       .catch((error) => console.error("Delete Error:", error));
   }
-  //   const found = this.movieItems.find((x) => x.id == id);
-  //   if (found) {
-  //     const updatedItems = this.movieItems.filter((x) => x.id != id);
-  //     localStorage.setItem("movie", JSON.stringify([...updatedItems]));
-  //     return updatedItems;
-  //   }
-
-  //   clear() {
-  //     localStorage.setItem("movie", JSON.stringify([]));
-  //     this.movieItems = [];
-  //   }
 }

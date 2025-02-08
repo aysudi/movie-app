@@ -1,6 +1,5 @@
 import { MovieManager } from "./class.js";
 import { renderMoviesList, searchMovies, sortMovies } from "./helper.js";
-import { movies } from "./movies.js";
 
 const API_URL = "https://67a0cfbf5bcfff4fabe0b8dc.mockapi.io/api/movies";
 
@@ -11,6 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((res) => res.json())
     .then((datas) => {
       renderMoviesList(datas);
+      searchMovies(datas);
+
       for (let i = 0; i < datas.length; i++) {
         const data = datas[i];
 
@@ -29,20 +30,38 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         deleteBtn.addEventListener("click", (e) => {
-          Swal.fire({
-            title: "Are you sure?",
-            showDenyButton: true,
-            showCancelButton: true,
-            confirmButtonText: "Yes, delete it!",
-            denyButtonText: `Don't delete`,
-          }).then((result) => {
-            if (result.isConfirmed) {
-              Swal.fire("Deleted!", "", "success");
-              movieItem.deleteElement(API_URL, data.id, e);
-            } else if (result.isDenied) {
-              Swal.fire("Movie are not deleted", "", "info");
-            }
+          const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+              confirmButton: "btn btn-success",
+              cancelButton: "btn btn-danger",
+            },
+            buttonsStyling: false,
           });
+          swalWithBootstrapButtons
+            .fire({
+              title: "Are you sure?",
+              text: "You won't be able to revert this!",
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonText: "Yes, delete it!",
+              cancelButtonText: "No, cancel!",
+              reverseButtons: true,
+            })
+            .then((result) => {
+              if (result.isConfirmed) {
+                movieItem.deleteElement(API_URL, data.id, deleteBtn);
+                swalWithBootstrapButtons.fire({
+                  title: "Deleted!",
+                  text: "Your file has been deleted.",
+                  icon: "success",
+                });
+              } else if (result.dismiss === Swal.DismissReason.cancel) {
+                swalWithBootstrapButtons.fire({
+                  title: "Cancelled",
+                  icon: "error",
+                });
+              }
+            });
         });
 
         favBtn.addEventListener("click", () => {
@@ -73,23 +92,3 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((error) => console.error("Fetch Error:", error));
 });
-
-searchMovies(movies);
-
-//   fetch(API_URL + "/23", {
-//     method: "DELETE",
-//     headers: { "Content-Type": "application/json" },
-//   }).then((response) => response.json());
-
-//   async function addMoviesToAPI(movies) {
-//     for (const movie of movies) {
-//       const response = await fetch(API_URL, {
-//         method: "POST",
-//         headers: { "Content-Type": "application/json" },
-//         body: JSON.stringify(movie),
-//       });
-
-//       const savedMovie = await response.json();
-//       console.log(`✅ Added: ${savedMovie.title} (ID: ${savedMovie.id})`);
-//     }
-//   }

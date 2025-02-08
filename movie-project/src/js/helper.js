@@ -56,21 +56,18 @@ export function renderFavoritesList(arr) {
   });
 }
 
-export function renderDetailsList(arr) {
-  arr.forEach((movie) => {
-    movieDetails.innerHTML = `
-     <h1>${movie.title}</h1>
+export function renderDetailsList(obj) {
+  movieDetails.innerHTML = `
+     <h1>${obj.title}</h1>
         <div class="movie__watch">
           <div class="movie-poster">
             <img
-              src="${movie.poster}"
+              src="${obj.poster}"
               alt=""
             />
           </div>
           <iframe
-            width="1000"
-            height="660"
-            src="${movie.trailerUrl}"
+            src="${obj.trailerUrl}"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -79,16 +76,15 @@ export function renderDetailsList(arr) {
           ></iframe>
         </div>
         <div class="details__buttons">
-          <button class="btn">${movie.genre}</button>
-          <button class="btn">IMDb: ⭐ ${movie.imdbRate}</button>
-          <button class="btn">Year: ${movie.year}</button>
+          <button class="btn">${obj.genre}</button>
+          <button class="btn">IMDb: ⭐ ${obj.imdbRate}</button>
+          <button class="btn">Year: ${obj.year}</button>
         </div>
-        <p class="description">${movie.description}</p>
-        <p class="create">Movie added ${moment(movie.createdAt).format(
+        <p class="description">${obj.description}</p>
+        <p class="create">Movie added ${moment(obj.createdAt).format(
           "DD/MM/YYYY"
         )}</p>
     `;
-  });
 }
 
 export function searchMovies(arr) {

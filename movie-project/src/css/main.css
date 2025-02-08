@@ -320,19 +320,19 @@ body {
   background: -webkit-linear-gradient(45deg, hsl(0, 1%, 76%) 0%, hsl(0, 0%, 48%) 52%, hsl(0, 0%, 0%) 100%);
 }
 
-.add-btn {
-  display: flex;
-  justify-content: center;
-  margin: 2rem auto;
+.swal2-popup {
+  font-size: 1rem !important;
+}
+
+.swal2-confirm,
+.swal2-cancel {
+  font-size: 1rem !important;
+  padding: 10px 20px !important;
+  background-color: #6f65e0;
   color: white;
-  background-color: transparent;
-  font-size: 20px;
-  padding: 1.5rem 0;
-  width: 15%;
-  cursor: pointer;
-  border: 1px solid #797878;
-  border-radius: 10px;
-  box-shadow: rgb(173, 173, 173) 0px 2px 6px 0px, rgba(60, 64, 67, 0.15) 0px 4px 6px 2px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 5px;
 }
 
 #detail {
@@ -361,30 +361,64 @@ body {
     width: 90%;
   }
 }
+@media (max-width: 768px) {
+  #detail .movie__details {
+    width: 90%;
+  }
+}
 #detail .movie__details h1 {
   font-size: 3.2rem;
+}
+@media (max-width: 480px) {
+  #detail .movie__details h1 {
+    font-size: 2rem;
+  }
 }
 #detail .movie__details .movie__watch {
   display: flex;
   gap: 2rem;
 }
+@media (max-width: 1199px) {
+  #detail .movie__details .movie__watch {
+    height: 20rem;
+  }
+}
+@media (max-width: 480px) {
+  #detail .movie__details .movie__watch {
+    height: 10rem;
+  }
+}
 #detail .movie__details .movie__watch .movie-poster {
-  width: 30%;
+  width: 33rem;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: rgb(173, 173, 173) 0px 5px 15px;
 }
+@media (max-width: 768px) {
+  #detail .movie__details .movie__watch .movie-poster {
+    display: none;
+  }
+}
 #detail .movie__details .movie__watch .movie-poster img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #detail .movie__details .movie__watch iframe {
   border-radius: 15px;
   box-shadow: rgb(173, 173, 173) 0px 5px 15px;
+  width: 80rem;
 }
 #detail .movie__details .details__buttons {
   display: flex;
   gap: 1rem;
+}
+@media (max-width: 480px) {
+  #detail .movie__details .details__buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 #detail .movie__details .details__buttons .btn {
   background-color: transparent;
@@ -393,13 +427,28 @@ body {
   padding: 0.8rem 2rem;
   border-radius: 10px;
 }
+@media (max-width: 480px) {
+  #detail .movie__details .details__buttons .btn {
+    padding: 0.5rem 1rem;
+  }
+}
 #detail .movie__details .description {
   font-size: 1.3rem;
+}
+@media (max-width: 768px) {
+  #detail .movie__details .description {
+    font-size: 1rem;
+  }
 }
 #detail .movie__details .create {
   font-size: 1.1rem;
   font-style: italic;
   color: #f0ae21;
+}
+@media (max-width: 768px) {
+  #detail .movie__details .create {
+    font-size: 0.9rem;
+  }
 }
 
 #add-movie {
@@ -423,11 +472,26 @@ body {
 #add-movie h2 {
   font-size: 2.5rem;
 }
+@media (max-width: 480px) {
+  #add-movie h2 {
+    font-size: 2rem;
+  }
+}
 #add-movie form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 25%;
+  width: 28rem;
+}
+@media (max-width: 768px) {
+  #add-movie form {
+    width: 22rem;
+  }
+}
+@media (max-width: 480px) {
+  #add-movie form {
+    width: 17rem;
+  }
 }
 #add-movie form input {
   background-color: transparent;
@@ -441,9 +505,20 @@ body {
 }
 #add-movie .add-btn {
   padding: 1rem;
-  width: 30%;
+  width: 10rem;
 }
 
-.changing-color {
-  color: black !important;
+.add-btn {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  color: white;
+  background-color: transparent;
+  font-size: 20px;
+  padding: 1.5rem 0;
+  width: 15rem;
+  cursor: pointer;
+  border: 1px solid #797878;
+  border-radius: 10px;
+  box-shadow: rgb(173, 173, 173) 0px 2px 6px 0px, rgba(60, 64, 67, 0.15) 0px 4px 6px 2px;
 }/*# sourceMappingURL=main.css.map */
