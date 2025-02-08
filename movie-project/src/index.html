@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Movie App</title>
+  </head>
+  <body>
+    <main>
+      <section id="hero">
+        <div class="hero">
+          <div class="hero__logo">
+            <img
+              src="https://cdn2.steamgriddb.com/logo_thumb/9b35be35d9c1a468c6f388c90b5be1f9.png"
+              alt=""
+            />
+          </div>
+          <div class="hero__favorites">
+            <div class="hero__select">
+              <i class="fa-solid fa-language"></i>
+              <select name="lang" id="lang">
+                <option value="eng">English</option>
+                <option value="az">Azerbaijani</option>
+                <option value="rus">Russian</option>
+              </select>
+            </div>
+            <a href="./favorites.html" class="favorites__icon">
+              <i class="fa-solid fa-heart"></i>
+            </a>
+          </div>
+        </div>
+        <div class="hero__search">
+          <div class="hero__container">
+            <h1>Unlimited movies, TV shows, and more</h1>
+            <div class="hero__search-form">
+              <input id="search" type="text" placeholder="search" />
+              <div class="hero__search-select">
+                <select name="sort" id="sort">
+                  <option value="all">all</option>
+                  <option value="new">newest to oldest</option>
+                  <option value="old">oldest to newest</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="cards"></section>
+      <a href="./add.html" class="add-btn">Add New Movie</a>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

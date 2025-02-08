@@ -1,0 +1,25 @@
+@mixin container() {
+  width: 85%;
+  margin: 0 auto;
+  @include respond-to(large) {
+    width: 90%;
+  }
+  @include respond-to(medium) {
+    width: 70%;
+  }
+  @include respond-to(small) {
+    width: 90%;
+  }
+}
+
+@mixin flex() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin respond-to($breakpoint) {
+  @media (max-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
