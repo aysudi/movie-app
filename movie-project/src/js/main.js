@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then((result) => {
               if (result.isConfirmed) {
                 movieItem.deleteElement(API_URL, data.id, deleteBtn);
+                movieItem.removeMovieItem(data.id);
                 swalWithBootstrapButtons.fire({
                   title: "Deleted!",
                   text: "Your file has been deleted.",

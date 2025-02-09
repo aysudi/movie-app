@@ -18,6 +18,21 @@ export class MovieManager {
     }
   }
 
+  removeMovieItem(id) {
+    const found = this.movieItems.find((x) => x.id == id);
+    if (found) {
+      const updatedMovieItems = this.movieItems.filter((x) => x.id != id);
+      this.movieItems = [...updatedMovieItems];
+      localStorage.setItem("movie", JSON.stringify([...updatedMovieItems]));
+      return updatedMovieItems;
+    } else {
+      return {
+        status: 404,
+        message: "not found!",
+      };
+    }
+  }
+
   deleteElement(url, id, el) {
     fetch(`${url}/${id}`, {
       method: "DELETE",
