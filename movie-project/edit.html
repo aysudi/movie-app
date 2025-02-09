@@ -12,43 +12,37 @@
   </head>
   <body>
     <section id="add-movie">
-      <h2>Add New Movie</h2>
+      <h2>Edit Movie</h2>
       <form id="movie-form">
         <input
           class="title-inp"
           type="text"
           placeholder="Enter the movie title"
-          required
         />
         <input
           class="genre-inp"
           type="text"
           placeholder="Enter the movie genre"
-          required
         />
         <input
           class="poster-inp"
           type="text"
           placeholder="Enter the movie poster URL"
-          required
         />
         <input
           class="trailer-inp"
           type="text"
           placeholder="Enter the movie trailer embed URL"
-          required
         />
         <input
           class="year-inp"
           type="number"
           placeholder="Enter the movie's release date."
-          required
         />
         <input
           class="description-inp"
           type="text"
           placeholder="Enter the movie description"
-          required
         />
         <input
           class="rate-inp"
@@ -57,12 +51,11 @@
           min="0"
           max="10"
           step="0.1"
-          required
         />
-        <button href="./index.html" class="add-btn" type="submit">Add</button>
+        <button href="./index.html" class="add-btn" type="submit">Edit</button>
       </form>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="module" src="./js/add.js"></script>
+    <script type="module" src="./src/js/edit.js"></script>
   </body>
 </html>
