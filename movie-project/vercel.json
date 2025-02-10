@@ -6,5 +6,11 @@
       "config": { "distDir": "dist" }
     }
   ],
-  "routes": [{ "src": "/(.*)", "dest": "/index.html" }]
+  "routes": [
+    {
+      "src": "/(.*)\\.(js|css|json|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|otf|eot|ttf|mp4|webm|wav|mp3|ogg|m4a|aac|opus)$",
+      "dest": "/$1"
+    },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
