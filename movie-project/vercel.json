@@ -8,7 +8,7 @@
   ],
   "routes": [
     {
-      "src": "/(.*)\\.(js|css|json|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|otf|eot|ttf|mp4|webm|wav|mp3|ogg|m4a|aac|opus)$",
+      "src": "/(.*)\\.(js|css|json|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|otf|eot|ttf|mp4|webm|wav|mp3|ogg|m4a|aac|opus|html)$",
       "dest": "/$1"
     },
     { "src": "/(.*)", "dest": "/index.html" }
