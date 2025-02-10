@@ -12,5 +12,12 @@
       "dest": "/$1"
     },
     { "src": "/(.*)", "dest": "/index.html" }
+  ],
+  "rewrites": [
+    { "source": "/index", "destination": "/index.html" },
+    { "source": "/favorites", "destination": "/favorites.html" },
+    { "source": "/edit", "destination": "/edit.html" },
+    { "source": "/detail", "destination": "/detail.html" },
+    { "source": "/add", "destination": "/add.html" }
   ]
 }
